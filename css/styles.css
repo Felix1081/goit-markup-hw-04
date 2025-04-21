@@ -351,16 +351,11 @@ img {
 }
 /* end 4th section */
 
+/* start footer */
 .ftr {
     background-color: var(--navy-blue);
     padding: 100px 0 100px 156px;
     display: flex;
-    gap: 120px;
-    align-items: baseline
-}
-.dop-clas {
-    display: inline-block;
-    margin: 0;
 }
 .ftr-txt-logo {
     color: var(--cloud);
@@ -370,7 +365,8 @@ img {
 }
 .ftr-container {
     display: flex;
-    margin-right: 120px
+    margin-right: 120px;
+    align-items: baseline;
 }
 .ftr-txt {
     font-weight: 500;
@@ -403,3 +399,5 @@ img {
 .ftr-link:focus {
     background-color: #31d0aa;
 }
+
+/* end footer */
