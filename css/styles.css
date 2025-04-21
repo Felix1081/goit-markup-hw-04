@@ -43,7 +43,7 @@ h3 {
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
-    line-height: 120%;
+    line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--navy-blue);
 }
@@ -51,7 +51,7 @@ p {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate);
 }
@@ -119,13 +119,14 @@ img {
     letter-spacing: 0.02em;
     color: var(--navy-blue);
     padding: 24px 0;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-nav.studio {
     position: relative;
 }
-.link-nav.studio::before {
+.link-nav.studio::after {
     content: '';
     position: absolute;
     left: 0;
@@ -149,6 +150,8 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail-tel:hover, .mail-tel:focus {
     color: var(--ocean);
@@ -196,9 +199,12 @@ img {
     height: 56px;
     border: none;
     margin: auto;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover, .button:focus {
-    background-color: var(--ocean);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background: var(--ocean);
 }
 /*end 1st section*/
 
@@ -247,18 +253,21 @@ img {
     background-color: var(--cloud);
     padding: 120px 0;
 }
-.our-title-main-conteiner {
+.our-title-main-container {
     display: flex;
     flex-direction: column;
 }
 .list {
     display: flex;
     gap: 24px;
+    justify-content: center;
 }
 .ourteam-list {
     background-color: var(--white);
     width: calc((100% - 3*24px)/4);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background: var(--white);
 }
 .ourteam-container {
     display: block;
@@ -270,6 +279,21 @@ img {
 }
 .ourteam-txt {
     text-align: center;
+    margin-bottom: 8px;
+}
+.ourteam-link {
+    background-color: var(--iris);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ourteam-link:hover {
+    background-color: var(--ocean);
 }
 /*end 3rd section*/
 
@@ -290,9 +314,30 @@ img {
 .ourportfolio-li {
     width: calc((100% - 2*24px)/3);
 }
-.overlay-container {
+.thumb {
     position: relative;
     overflow: hidden;
+}
+.txt {
+    color: var(--cloud);
+    padding: 40px 32px 0 32px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--iris);
+    transform: translateY(100%);
+    transition-property: translateY();
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ourportfolio-li:hover .txt {
+    transform: translateY(0%);
+}
+.ourportfolio-li:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .ourportfolio-container {
     padding: 32px 16px;
@@ -302,36 +347,46 @@ img {
 .ourportfolio-title {
     margin-bottom: 8px;
 }
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--iris);
-    transform: translatey(100%);
-    transition: transform 250ms ease-in-out;
-}
-.overlay p {
-    color: var(--cloud);
-    padding: 40px 32px 0 32px;
-}
-.ourportfolio-container:hover .overlay {
-    transform: translatey(0);
-}
 /* end 4th section */
 
 .ftr {
     background-color: var(--navy-blue);
     padding: 100px 0 100px 156px;
+    display: flex;
+    gap: 120px;
 }
-
 .dop-clas {
     display: inline-block;
+    margin: 0;
 }
 .ftr-txt {
     color: var(--cloud);
 }
 .logo-studio-ftr {
     color: var(--cloud);
+}
+.ftr-title {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+}
+.ftr-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 16px;
+}
+.ftr-link {
+    background-color: var(--iris);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ftr-link:hover {
+    background-color: var(--green);
 }
