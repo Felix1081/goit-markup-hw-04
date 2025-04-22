@@ -291,7 +291,8 @@ img {
     justify-content: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
-.ourteam-link:hover {
+.ourteam-link:hover,
+.ourteam-link:focus {
     background-color: #404bbf;
 }
 .icon {
@@ -357,6 +358,10 @@ img {
     padding: 100px 0 100px 156px;
     display: flex;
 }
+.ftr-cntr {
+    display: flex;
+    align-items: baseline;
+}
 .ftr-txt-logo {
     color: var(--cloud);
 }
@@ -364,9 +369,7 @@ img {
     color: var(--cloud);
 }
 .ftr-container {
-    display: flex;
     margin-right: 120px;
-    align-items: baseline;
 }
 .ftr-txt {
     font-weight: 500;
